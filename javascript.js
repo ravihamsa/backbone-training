@@ -12,7 +12,7 @@ console.log(myVariable); // I am from script2.js
 
 
 
-//Basic Data Types
+//Literal Data Types
 
 var myString = "String";
 
@@ -37,5 +37,30 @@ var myFunction = function(){
 //Other Data Types
 var floored = Math.floor(0.12) //0
 var currentTimeStamp = new Date().getTime() //milliseconds since "Thu Jan 01 1970"
+
+
+
+
+//Literals passed by value, Others by Reference
+
+var a=20, b=30;
+var add = function(number1, number2){
+  number1 = 10;
+  return number1 + number2;
+}
+
+console.log(add(a,b)); //40 not 50;
+console.log(a); //20
+
+
+var a = [20,30]
+
+var addArrayMembers = function(numberArray){
+  numberArray[0] = 10;
+  return numberArray[0]+numberArray[1]
+}
+
+console.log(addArrayMembers(a)) // 40
+console.log(a[0]) //10 not 20;
 
 
