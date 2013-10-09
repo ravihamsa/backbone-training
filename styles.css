@@ -1,0 +1,36 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+li {
+  text-align: left;
+}
+body {
+  background: #000000 url('images/background.jpg');
+  display: table;
+  color: #fff;
+  font-family: "Segoe UI";
+  text-shadow: 1px 2px 5px #ccc;
+}
+.wrapper {
+  width: 1000px;
+  margin: 0 auto;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.page {
+  display: none;
+  position: relative;
+}
+.page1 h1 {
+  font-size: 100px;
+  margin-bottom: 0;
+}
+a {
+  color: #ccc;
+  font-weight: bold;
+}

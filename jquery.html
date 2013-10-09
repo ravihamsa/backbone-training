@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jquery</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="text/javascript" src="libs/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="libs/underscore.js"></script>
+    <script type="text/javascript" src="libs/backbone.js"></script>
+</head>
+<body>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ante justo, dapibus ultricies leo sed, dapibus fringilla tortor. Integer turpis arcu, venenatis nec neque ultrices, cursus consequat arcu. Sed nec elit tincidunt, volutpat dolor id, rutrum orci. Ut faucibus tellus vel velit aliquam dictum. Praesent sit amet facilisis augue. In ut diam id sapien sagittis tristique. Aliquam viverra accumsan orci. Ut fringilla accumsan elit in volutpat.</p>
+
+<p>Etiam vitae venenatis tellus. Vivamus sed vehicula mi. Nunc et nisi lorem. Nullam molestie et massa in iaculis. Vivamus condimentum quam vehicula nunc laoreet, ac vestibulum magna fermentum. In suscipit est ligula, nec consequat neque tempus ut. In nisl leo, porttitor vitae libero id, tincidunt egestas magna. </p>
+
+<p>Etiam venenatis lorem hendrerit massa sollicitudin semper. Donec quis sollicitudin est. Fusce nec convallis ipsum. Curabitur eu commodo mi, at commodo leo. Nulla facilisi. In ultrices lorem sit amet erat aliquam interdum. Cras dignissim est nec imperdiet luctus. Sed in massa purus. Ut elementum ac ligula condimentum tristique. Etiam turpis justo, fringilla ut ultrices pretium, feugiat ac augue. Nunc placerat bibendum nunc sed convallis. Mauris ut ante mi.</p>
+
+<p>Morbi tempus neque sit amet eleifend porta. Nulla ipsum quam, mollis eu accumsan ut, luctus ac erat. Phasellus semper pulvinar bibendum. Nam laoreet blandit quam in feugiat. Sed rhoncus felis in odio gravida, ut volutpat massa consectetur. Proin eu diam risus. Proin lacus elit, commodo sed viverra ut, laoreet sit amet velit. Nullam in urna lectus. Morbi ullamcorper diam quam, id feugiat felis convallis vitae. Integer in diam sit amet mi faucibus fringilla. Donec vulputate metus orci. Vestibulum vulputate libero turpis, sed porttitor sem volutpat nec.</p>
+
+<p>Duis vehicula volutpat tincidunt. Aenean feugiat mauris sit amet massa fringilla faucibus. Fusce lacinia massa sed lectus adipiscing, sit amet rhoncus erat pharetra. Aenean ultricies lorem vitae risus vehicula ultricies. Nam feugiat imperdiet fermentum. Donec eget nulla accumsan, varius nunc sit amet, vehicula enim. Pellentesque tempor ipsum metus, at dapibus quam fermentum id. Quisque ultrices quam in quam sagittis, vel rhoncus ipsum auctor. Duis adipiscing faucibus suscipit. Donec consequat faucibus malesuada. Nulla vitae iaculis massa, ac dapibus urna.</p>
+
+
+<div id="lipsum">
+    <p></p>
+    <ul>
+        <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li>Aliquam tristique massa sed porta venenatis.</li>
+        <li>Morbi tristique felis at sapien volutpat, vitae porttitor libero pulvinar.</li>
+        <li>Sed placerat augue nec nulla vestibulum, iaculis hendrerit odio ullamcorper.</li>
+    </ul>
+    <p></p>
+
+    <p></p>
+    <ul>
+        <li>Nunc auctor orci sit amet eros ornare, eget rutrum augue mollis.</li>
+        <li>Suspendisse placerat turpis ut gravida interdum.</li>
+        <li>Proin sed lectus vitae odio tempus consequat.</li>
+        <li>Vivamus eu nunc laoreet, ullamcorper lectus vitae, scelerisque risus.</li>
+        <li>Proin sed magna dapibus felis rhoncus molestie nec sit amet dolor.</li>
+    </ul>
+    <p></p>
+
+    <p></p>
+    <ul>
+        <li>Nullam sit amet elit sed leo convallis eleifend.</li>
+        <li>Quisque imperdiet neque in felis pulvinar, at eleifend nisl porttitor.</li>
+        <li>Ut scelerisque sapien at facilisis elementum.</li>
+    </ul>
+    <p></p>
+
+    <p></p>
+    <ul>
+        <li>Vivamus varius nisi varius, facilisis eros eu, dignissim velit.</li>
+        <li>Etiam at magna dignissim, hendrerit quam id, sodales risus.</li>
+        <li>Aliquam hendrerit dui vitae porta accumsan.</li>
+    </ul>
+    <p></p>
+
+    <p></p>
+    <ul>
+        <li>Fusce sit amet risus id massa suscipit semper.</li>
+        <li>Mauris eu massa hendrerit odio adipiscing varius ullamcorper in ligula.</li>
+        <li>Nullam pellentesque quam posuere, cursus risus et, luctus magna.</li>
+        <li>Morbi vel sem hendrerit, gravida nisl vitae, porttitor neque.</li>
+        <li>In ac augue in mauris malesuada pharetra.</li>
+    </ul>
+    <p></p></div>
+
+<script type="text/javascript">
+    //selector, find, append, appendTo,  custom events
+    $('p');
+    $('ul').first().find('li').first();
+
+    for(var i=0; i<10; i++){
+        $('<div> My Dynamic Div </div>').appendTo('body')
+    }
+
+    $('p').first().on('click',function(){
+        console.log('triggering paragraphOneClicked')
+        $('body').trigger('paragraphOneClicked');
+    })
+
+
+    $('body').on('paragraphOneClicked', function(e){
+        console.log('paragraphOneClicked event captured')
+    })
+
+</script>
+</body>
+</html>
