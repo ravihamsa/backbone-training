@@ -13,3 +13,12 @@ function sayHelloTo(name) {
 
 var helloToRavi = sayHelloTo('Ravi');
 helloToRavi()
+
+
+/*
+Common usecases:
+
+1. private variables (relatively private)
+2. maintaining context for asynchronus callbacks
+3. preserving results or complecated computations
+*/
