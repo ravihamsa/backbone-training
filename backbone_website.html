@@ -33,12 +33,17 @@
 
 
 <script type="text/template" id="headerTemplate">
-    <div class="welcome">Hi <strong>{{userName}}</strong>,
-        <a href="logout.html">Logout</a>
+    <div>
+        <div class="welcome">Hi <strong>{{userName}}</strong>,
+            <a href="logout.html">Logout</a>
+        </div>
+        <a href="http://google.com">
+            <img src="images/logo.png" height="75" />
+        </a>
     </div>
-    <a href="http://google.com">
-        <img src="images/logo.png" height="75" />
-    </a>
+    <div>
+        You are in: {{pageName}} Page
+    </div>
 </script>
 
 
@@ -114,6 +119,8 @@
             var contentEl = $('.content');
             contentEl.empty();
 
+            appModel.set('pageId', pageId);
+
             switch (pageId) {
                 case 'users':
                     var userCollection = new UserCollection();
@@ -180,11 +187,11 @@
     })
 
 
-    var headerModel = new Backbone.Model({
+    var appModel = new Backbone.Model({
         userName: 'Ravi Hamsa'
     })
     var header = new HeaderView({
-        model: headerModel,
+        model: appModel,
         el: '.header'
 
     });
@@ -219,6 +226,15 @@
 
     var contentView = new ContentView();
     contentView.render();
+
+
+    appModel.on('change:pageId', function (model, pageId) {
+        var navOption = navOptionCollection.get(pageId);
+        var pageName = navOption.get('name');
+        appModel.set('pageName', pageName);
+        header.render();
+    })
+
 
     var router = new WebsiteRouter();
     Backbone.history.start();
