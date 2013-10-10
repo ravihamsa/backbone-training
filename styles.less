@@ -20,22 +20,50 @@ body {
 .wrapper {
   width: 1000px;
   margin: 0 auto;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
 }
 
-.page{
-  display: none;
-  position: relative;
-}
-
-.page1 h1 {
-  font-size: 100px;
-  margin-bottom: 0;
-}
 
 a {
   color:#ccc;
   font-weight: bold;
+}
+
+
+.content-wrapper {
+  padding-left: 200px;
+  letter-spacing: -0.31em;
+  word-spacing: -0.43em;
+  .navigation {
+    width:200px;
+    margin-left: -200px;
+    letter-spacing: normal;
+    word-spacing: normal;
+    display: inline-block;
+    vertical-align: top;
+    ul,li{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      a {
+        display: block;
+        background-color: #333;
+        margin-bottom: 10px;
+        text-decoration: none;
+        padding: 5px;
+
+
+        &:hover, .active {
+          background-color: #444;
+        }
+      }
+    }
+  }
+
+  .content {
+    letter-spacing: normal;
+    word-spacing: normal;
+    display: inline-block;
+    vertical-align: top;
+    margin-left:20px;
+  }
 }
