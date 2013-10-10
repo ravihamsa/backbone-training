@@ -33,7 +33,7 @@ var BullockCart = function(){
   }
 }
 
-TwoWheeler.prototype = new Vehicle();
+BullockCart.prototype = new Vehicle();
 
 var bullockCart = new BullockCart();
 console.log(bullockCart.pull());
