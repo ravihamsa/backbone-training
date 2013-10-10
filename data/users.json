@@ -1,1 +1,106 @@
-{"results":[{"user":{"gender":"female","name":{"title":"mrs","first":"hannah","last":"torres"},"location":{"street":"6893 cackson st","city":"celina","state":"pennsylvania","zip":"79252"},"email":"hannah.torres20@example.com","password":"squirt","md5_hash":"2e1056defdb4eac51954b37a93608628","sha1_hash":"e8f11b3c3b87626bb7d1fd295d63d63812828fc5","phone":"(598)-567-4255","cell":"(460)-303-4820","SSN":"116-31-3561","picture":"http:\/\/api.randomuser.me\/0.2\/portraits\/women\/21.jpg"},"seed":"cec4d67e1439bb6","version":"0.2.1"},{"user":{"gender":"female","name":{"title":"miss","first":"nevaeh","last":"nelson"},"location":{"street":"8405 w belt line rd","city":"columbus","state":"texas","zip":"54160"},"email":"nevaeh.nelson68@example.com","password":"torino","md5_hash":"ed8b38fd3ef9b08697d7a2728cf831b4","sha1_hash":"4e1e0fd450a9097908e41b39ab3cd2a68980e99b","phone":"(142)-380-2699","cell":"(432)-950-9344","SSN":"346-33-9972","picture":"http:\/\/api.randomuser.me\/0.2\/portraits\/women\/21.jpg"},"seed":"b8324036f15cb5d","version":"0.2.1"},{"user":{"gender":"female","name":{"title":"miss","first":"linda","last":"griffin"},"location":{"street":"6787 rolling green rd","city":"grapevine","state":"utah","zip":"13064"},"email":"linda.griffin22@example.com","password":"redhead","md5_hash":"8797e3bdbe5547a13c73b7e11ccfa479","sha1_hash":"cf53d781fd6b2285786f0740d7054ab534c0ac91","phone":"(516)-325-8622","cell":"(959)-431-5787","SSN":"293-21-5411","picture":"http:\/\/api.randomuser.me\/0.2\/portraits\/women\/8.jpg"},"seed":"3c9d611c1b33df1","version":"0.2.1"},{"user":{"gender":"male","name":{"title":"mr","first":"isaac","last":"baker"},"location":{"street":"2966 spring hill rd","city":"flowermound","state":"california","zip":"27117"},"email":"isaac.baker35@example.com","password":"devon","md5_hash":"e50da88aa796637e5e634006d6db525e","sha1_hash":"b8ef84e0e586cd0b4ba58cd5d641f2837f635025","phone":"(489)-975-8478","cell":"(912)-755-7785","SSN":"604-10-6110","picture":"http:\/\/api.randomuser.me\/0.2\/portraits\/men\/38.jpg"},"seed":"8ed8780fae9b3ef","version":"0.2.1"},{"user":{"gender":"male","name":{"title":"mr","first":"angel","last":"jackson"},"location":{"street":"4273 camden ave","city":"roanoke","state":"vermont","zip":"29676"},"email":"angel.jackson73@example.com","password":"valencia","md5_hash":"e45c3160715aa0cd136b2d6b49742503","sha1_hash":"b0b29f110c52452e0041c0aeeece7fc45b11aca4","phone":"(333)-659-9438","cell":"(521)-574-6374","SSN":"381-46-2295","picture":"http:\/\/api.randomuser.me\/0.2\/portraits\/men\/42.jpg"},"seed":"79f80d6b602d523","version":"0.2.1"}]}
+{"results": [
+    {
+        "user": {
+            "gender": "female",
+            "name": {
+                "title": "miss",
+                "first": "nevaeh",
+                "last": "nelson"
+            },
+            "location": {
+                "street": "8405 w belt line rd",
+                "city": "columbus",
+                "state": "texas",
+                "zip": "54160"
+            },
+            "email": "nevaeh.nelson68@example.com",
+            "password": "torino",
+            "md5_hash": "ed8b38fd3ef9b08697d7a2728cf831b4",
+            "sha1_hash": "4e1e0fd450a9097908e41b39ab3cd2a68980e99b",
+            "phone": "(142)-380-2699",
+            "cell": "(432)-950-9344",
+            "SSN": "346-33-9972",
+            "picture": "http:\/\/api.randomuser.me\/0.2\/portraits\/women\/21.jpg"
+        },
+        "seed": "b8324036f15cb5d",
+        "version": "0.2.1"
+    },
+    {
+        "user": {
+            "gender": "female",
+            "name": {
+                "title": "miss",
+                "first": "linda",
+                "last": "griffin"
+            },
+            "location": {
+                "street": "6787 rolling green rd",
+                "city": "grapevine",
+                "state": "utah",
+                "zip": "13064"
+            },
+            "email": "linda.griffin22@example.com",
+            "password": "redhead",
+            "md5_hash": "8797e3bdbe5547a13c73b7e11ccfa479",
+            "sha1_hash": "cf53d781fd6b2285786f0740d7054ab534c0ac91",
+            "phone": "(516)-325-8622",
+            "cell": "(959)-431-5787",
+            "SSN": "293-21-5411",
+            "picture": "http:\/\/api.randomuser.me\/0.2\/portraits\/women\/8.jpg"
+        },
+        "seed": "3c9d611c1b33df1",
+        "version": "0.2.1"
+    },
+    {
+        "user": {
+            "gender": "male",
+            "name": {
+                "title": "mr",
+                "first": "isaac",
+                "last": "baker"
+            },
+            "location": {
+                "street": "2966 spring hill rd",
+                "city": "flowermound",
+                "state": "california",
+                "zip": "27117"
+            },
+            "email": "isaac.baker35@example.com",
+            "password": "devon",
+            "md5_hash": "e50da88aa796637e5e634006d6db525e",
+            "sha1_hash": "b8ef84e0e586cd0b4ba58cd5d641f2837f635025",
+            "phone": "(489)-975-8478",
+            "cell": "(912)-755-7785",
+            "SSN": "604-10-6110",
+            "picture": "http:\/\/api.randomuser.me\/0.2\/portraits\/men\/38.jpg"
+        },
+        "seed": "8ed8780fae9b3ef",
+        "version": "0.2.1"
+    },
+    {
+        "user": {
+            "gender": "male",
+            "name": {
+                "title": "mr",
+                "first": "angel",
+                "last": "jackson"
+            },
+            "location": {
+                "street": "4273 camden ave",
+                "city": "roanoke",
+                "state": "vermont",
+                "zip": "29676"
+            },
+            "email": "angel.jackson73@example.com",
+            "password": "valencia",
+            "md5_hash": "e45c3160715aa0cd136b2d6b49742503",
+            "sha1_hash": "b0b29f110c52452e0041c0aeeece7fc45b11aca4",
+            "phone": "(333)-659-9438",
+            "cell": "(521)-574-6374",
+            "SSN": "381-46-2295",
+            "picture": "http:\/\/api.randomuser.me\/0.2\/portraits\/men\/42.jpg"
+        },
+        "seed": "79f80d6b602d523",
+        "version": "0.2.1"
+    }
+]}

@@ -4,11 +4,66 @@
     <title>Backbone Training</title>
     <link rel="stylesheet" href="styles.css" />
     <script type="text/javascript" src="libs/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="libs/handlebars.js"></script>
     <script type="text/javascript" src="libs/underscore.js"></script>
     <script type="text/javascript" src="libs/backbone.js"></script>
+
 </head>
 <body>
 
+<div class="wrapper">
+    <div class="header">
 
+    </div>
+    <div class="content-wrapper">
+        <div class="navigation">
+
+        </div>
+
+        <div class="content">
+
+        </div>
+    </div>
+</div>
+
+<script type="text/template" id="headerTemplate">
+    <div>
+        <a href="http://google.com"><img src="images/logo.png" height="50"/> </a>
+        <div class="welcome"> Welcome {{userName}}, <a href="#">Logout</a> </div>
+    </div>
+</script>
+
+<script type="text/javascript">
+var root = {};
+root.appModel = new Backbone.Model({
+    userName:'Ravi Hamsa'
+})
+
+root.navCollection = new Backbone.Collection([{
+    id:'home',
+    name:'Home'
+
+},{
+    id:'about_us',
+    name:'About Us'
+
+},{
+    id:'users',
+    name:'Users'
+
+},{
+    id:'contact_us',
+    name:'Contact US'
+
+}]);
+
+
+
+</script>
+<script type="text/javascript" src="js/router.js"></script>
+<script type="text/javascript" src="js/headerView.js"></script>
+<script type="text/javascript" src="js/navigationView.js"></script>
+<script type="text/javascript" src="js/userPageView.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
