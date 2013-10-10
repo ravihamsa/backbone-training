@@ -4,6 +4,7 @@
     <title>Backbone Website</title>
     <link rel="stylesheet" href="styles.css" />
     <script type="text/javascript" src="libs/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="libs/handlebars.js"></script>
     <script type="text/javascript" src="libs/underscore.js"></script>
     <script type="text/javascript" src="libs/backbone.js"></script>
 
@@ -31,6 +32,23 @@
 </div>
 
 
+<script type="text/template" id="headerTemplate">
+    <div class="welcome">Hi <strong>{{userName}}</strong>,
+        <a href="logout.html">Logout</a>
+    </div>
+    <a href="http://google.com">
+        <img src="images/logo.png" height="75" />
+    </a>
+</script>
+
+
+<script type="text/template" id="navOptionTemplate">
+    <li>
+        <a href="#{{id}}">{{name}}</a>
+    </li>
+</script>
+
+
 <script type="text/javascript">
     /*
      Properties
@@ -47,8 +65,6 @@
      initialize
      this.$
      render
-
-
      */
 
 </script>
@@ -56,60 +72,156 @@
 
     //View Definitions
 
+
     var HeaderView = Backbone.View.extend({
-        render:function(){
-            this.$el.html('<h1>this is the header view</h1>')
+        render: function () {
+            var templateFunction = Handlebars.compile($('#headerTemplate').html());
+            this.$el.html(templateFunction(this.model.toJSON()));
         }
+    });
+
+
+    var NavigationView = Backbone.View.extend({
+        tagName: 'ul',
+        className: 'left-nav',
+        el: '.navigation',
+        render: function () {
+            var navTemplate = Handlebars.compile($('#navOptionTemplate').html())
+            this.collection.each(function (model) {
+                this.$el.append(navTemplate(model.toJSON()))
+            }, this)
+        }
+    });
+
+    var ContentView = Backbone.View.extend({
+        render: function () {
+            this.$el.html('this is the content view')
+        },
+        el: '.content'
     })
 
 
-    var NavigationView  = Backbone.View.extend({
-        tagName:'ul',
-        className:'left-nav',
-        render:function(){
-            var navOptions = [{
-                id:'home',
-                name:'Home'
-            },{
-                id:'about_us',
-                name:'About Us'
-            },{
-                id:'products',
-                name:'Products'
-            },{
-                id:'contact_us',
-                name:'Contact US'
-            }]
+    var WebsiteRouter = Backbone.Router.extend({
+        routes: {
+            '': 'index',
+            ':pageId': 'loadPage'
+        },
+        index: function () {
+            this.loadPage('home');
+        },
+        loadPage: function (pageId) {
 
-            for(var i= 0, len = navOptions.length; i<len; i++){
-                var curOption = navOptions[i];
-                this.$el.append('<li><a href="#'+curOption.id+'">'+curOption.name+'</a> </li>')
+            var contentEl = $('.content');
+            contentEl.empty();
+
+            switch (pageId) {
+                case 'users':
+                    var userCollection = new UserCollection();
+                    var userView = new UserView({
+                        collection: userCollection
+                    });
+                    userView.render();
+                    userView.$el.appendTo(contentEl);
+                    userCollection.fetch();
+                    break;
+
+                default:
+                    var templateRequest = $.ajax('templates/' + pageId + '.html')
+                    templateRequest.done(function (htmlString) {
+                        contentEl.html(htmlString);
+                    })
+                    break;
             }
         }
     })
 
+    var UserCollection = Backbone.Collection.extend({
+        url: 'data/users.json',
+        parse: function (data) {
+            return data.results;
+        }
+    })
 
+    var UserItemView = Backbone.View.extend({
+        className: 'user',
+        tagName: 'tr',
+        render: function () {
+            var _this = this;
+            var templateRequest = $.ajax('templates/user.html')
+            templateRequest.done(function (htmlString) {
+                var templateFunction = Handlebars.compile(htmlString);
+                _this.$el.html(templateFunction(_this.model.toJSON()));
+            })
+        }
+    })
 
-    var ContentView = Backbone.View.extend({
-        render:function(){
-            this.$el.html('this is the content view')
+    var UserView = Backbone.View.extend({
+        tagName: 'table',
+        className: 'user-list',
+        initialize: function () {
+            this.listenTo(this.collection, 'add', this.addUser);
         },
-        el:'.content'
+        render: function () {
+            var columns = ['name', 'picture', 'email', 'phone']
+            var tr = $('<tr></tr>');
+            _.each(columns, function (head) {
+                tr.append('<th>' + head + '</th>');
+            })
+
+            this.$el.append(tr);
+        },
+        addUser: function (model) {
+            var userItemView = new UserItemView({
+                model: model
+            })
+            userItemView.render();
+            userItemView.$el.appendTo(this.$el);
+        }
     })
 
 
+    var headerModel = new Backbone.Model({
+        userName: 'Ravi Hamsa'
+    })
     var header = new HeaderView({
-        el:'.header'
+        model: headerModel,
+        el: '.header'
+
     });
     header.render();
 
 
-    var navigation = new  NavigationView();
+    var navOptionCollection = new Backbone.Collection([
+        {
+            id: 'home',
+            name: 'Home'
+        },
+        {
+            id: 'about_us',
+            name: 'About Us'
+        },
+        {
+            id: 'users',
+            name: 'Users'
+        },
+        {
+            id: 'contact_us',
+            name: 'Contact US'
+        }
+    ]);
+
+
+    var navigation = new NavigationView({
+        collection: navOptionCollection
+    });
     navigation.render();
-    navigation.$el.appendTo('.navigation')
+
 
     var contentView = new ContentView();
     contentView.render();
+
+    var router = new WebsiteRouter();
+    Backbone.history.start();
 
 </script>
 <script type="text/javascript" src="logger.js"></script>

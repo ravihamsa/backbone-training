@@ -9,18 +9,16 @@ li {
   text-align: left;
 }
 body {
-  background: #000000 url('images/background.jpg');
-  display: table;
-  color: #fff;
   font-family: "Segoe UI";
-  text-shadow: 1px 2px 5px #ccc;
+  color: #333;
 }
 .wrapper {
   width: 1000px;
   margin: 0 auto;
+  position: relative;
 }
 a {
-  color: #ccc;
+  color: #666;
   font-weight: bold;
 }
 .content-wrapper {
@@ -45,7 +43,6 @@ a {
 .content-wrapper .navigation ul a,
 .content-wrapper .navigation li a {
   display: block;
-  background-color: #333;
   margin-bottom: 10px;
   text-decoration: none;
   padding: 5px;
@@ -54,7 +51,7 @@ a {
 .content-wrapper .navigation li a:hover,
 .content-wrapper .navigation ul a .active,
 .content-wrapper .navigation li a .active {
-  background-color: #444;
+  background-color: #ccc;
 }
 .content-wrapper .content {
   letter-spacing: normal;
@@ -62,4 +59,24 @@ a {
   display: inline-block;
   vertical-align: top;
   margin-left: 20px;
+}
+.welcome {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.user-list table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+.user-list td,
+.user-list th {
+  padding: 5px;
+  border: 1px solid #ccc;
+  text-align: left;
+}
+.user-list th {
+  text-transform: uppercase;
+  background-color: #333;
+  color: #fff;
 }

@@ -10,21 +10,19 @@ li {
 }
 
 body {
-  background: #000 url('images/background.jpg');
-  display: table;
-  color: #fff;
   font-family: "Segoe UI";
-  text-shadow: 1px 2px 5px #ccc;
+  color:#333;
 }
 
 .wrapper {
   width: 1000px;
   margin: 0 auto;
+  position: relative;
 }
 
 
 a {
-  color:#ccc;
+  color:#666;
   font-weight: bold;
 }
 
@@ -33,6 +31,7 @@ a {
   padding-left: 200px;
   letter-spacing: -0.31em;
   word-spacing: -0.43em;
+
   .navigation {
     width:200px;
     margin-left: -200px;
@@ -46,14 +45,12 @@ a {
       list-style: none;
       a {
         display: block;
-        background-color: #333;
         margin-bottom: 10px;
         text-decoration: none;
         padding: 5px;
 
-
         &:hover, .active {
-          background-color: #444;
+          background-color: #ccc;
         }
       }
     }
@@ -65,5 +62,29 @@ a {
     display: inline-block;
     vertical-align: top;
     margin-left:20px;
+  }
+}
+
+.welcome {
+  position: absolute;
+  right:10px;
+  top:10px;
+}
+
+.user-list {
+  table {
+    border-spacing:0;
+    border-collapse:collapse;
+  }
+  td, th {
+    padding:5px;
+    border:1px solid #ccc;
+    text-align: left;
+  }
+
+  th {
+    text-transform: uppercase;
+    background-color: #333;
+    color:#fff;
   }
 }
